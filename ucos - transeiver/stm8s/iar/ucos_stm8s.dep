@@ -1,0 +1,510 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project>
+    <fileVersion>2</fileVersion>
+    <fileChecksum>206719882</fileChecksum>
+    <configuration>
+        <name>Debug</name>
+        <outputs>
+            <file>$TOOLKIT_DIR$\inc\c\DLib_Product.h</file>
+            <file>$PROJ_DIR$\Debug\Obj\OS_Q.o</file>
+            <file>$PROJ_DIR$\Debug\Obj\init_peripher.o</file>
+            <file>$PROJ_DIR$\..\..\ucos_II\OS_CORE.C</file>
+            <file>$PROJ_DIR$\..\..\ucos_II\OS_MBOX.C</file>
+            <file>$PROJ_DIR$\..\..\ucos_II\OS_MUTEX.C</file>
+            <file>$PROJ_DIR$\..\..\ucos_II\OS_Q.C</file>
+            <file>$PROJ_DIR$\..\src\init_peripher.c</file>
+            <file>$PROJ_DIR$\..\..\ucos_II\OS_MEM.C</file>
+            <file>$PROJ_DIR$\..\src\includes.h</file>
+            <file>$PROJ_DIR$\..\..\ucos_II\iarstm8\os_cpu_a.s</file>
+            <file>$PROJ_DIR$\Debug\Obj\OS_SEM.o</file>
+            <file>$PROJ_DIR$\Debug\Obj\OS_MBOX.o</file>
+            <file>$PROJ_DIR$\Debug\Obj\OS_CORE.o</file>
+            <file>$TOOLKIT_DIR$\inc\c\ycheck.h</file>
+            <file>$PROJ_DIR$\..\src\at1846s.c</file>
+            <file>$TOOLKIT_DIR$\inc\io_macros.h</file>
+            <file>$PROJ_DIR$\Debug\List\OS_SEM.s</file>
+            <file>$PROJ_DIR$\..\src\interrupt.c</file>
+            <file>$PROJ_DIR$\Debug\Obj\interrupt.o</file>
+            <file>$PROJ_DIR$\..\..\ucos_II\iarstm8\os_cpu_c.c</file>
+            <file>$PROJ_DIR$\..\..\ucos_II\OS_TASK.C</file>
+            <file>$PROJ_DIR$\..\src\main.c</file>
+            <file>$PROJ_DIR$\..\src\periph_ticks.s</file>
+            <file>$PROJ_DIR$\..\..\ucos_II\OS_SEM.C</file>
+            <file>$PROJ_DIR$\..\..\ucos_II\OS_TIME.C</file>
+            <file>$PROJ_DIR$\..\src\rda1846s.c</file>
+            <file>$PROJ_DIR$\..\..\ucos_II\OS_FLAG.C</file>
+            <file>$PROJ_DIR$\..\src\at1846s.h</file>
+            <file>$PROJ_DIR$\Debug\Obj\init_peripher.pbi</file>
+            <file>$TOOLKIT_DIR$\inc\c\ysizet.h</file>
+            <file>$PROJ_DIR$\..\..\ucos_II\iarstm8\os_cpu.h</file>
+            <file>$PROJ_DIR$\Debug\Obj\at1846s.o</file>
+            <file>$TOOLKIT_DIR$\inc\c\xencoding_limits.h</file>
+            <file>$PROJ_DIR$\Debug\Obj\OS_Q.pbi</file>
+            <file>$TOOLKIT_DIR$\inc\c\intrinsics.h</file>
+            <file>$PROJ_DIR$\..\src\stled316s.h</file>
+            <file>$PROJ_DIR$\Debug\Obj\interrupt.pbi</file>
+            <file>$PROJ_DIR$\Debug\Obj\OS_FLAG.o</file>
+            <file>$PROJ_DIR$\..\src\interrupt.h</file>
+            <file>$TOOLKIT_DIR$\config\lnkstm8s105k4.icf</file>
+            <file>$PROJ_DIR$\Debug\List\interrupt.s</file>
+            <file>$TOOLKIT_DIR$\lib\dlstm8smn.a</file>
+            <file>$PROJ_DIR$\Debug\List\at1846s.s</file>
+            <file>$PROJ_DIR$\Debug\Obj\os_cpu_c.o</file>
+            <file>$PROJ_DIR$\Debug\List\init_peripher.s</file>
+            <file>$PROJ_DIR$\Debug\Obj\OS_FLAG.pbi</file>
+            <file>$PROJ_DIR$\Debug\Obj\OS_MEM.pbi</file>
+            <file>$PROJ_DIR$\Debug\Obj\OS_MBOX.pbi</file>
+            <file>$PROJ_DIR$\Debug\Obj\at1846s.pbi</file>
+            <file>$PROJ_DIR$\Debug\List\main.s</file>
+            <file>$PROJ_DIR$\Debug\Obj\rda1846s.o</file>
+            <file>$PROJ_DIR$\Debug\List\os_cpu_c.s</file>
+            <file>$TOOLKIT_DIR$\inc\c\string.h</file>
+            <file>$PROJ_DIR$\Debug\Obj\OS_MUTEX.o</file>
+            <file>$PROJ_DIR$\..\src\periph_io.h</file>
+            <file>$PROJ_DIR$\Debug\List\OS_MEM.s</file>
+            <file>$PROJ_DIR$\Debug\Obj\OS_MEM.o</file>
+            <file>$PROJ_DIR$\Debug\List\OS_Q.s</file>
+            <file>$TOOLKIT_DIR$\inc\c\DLib_Threads.h</file>
+            <file>$PROJ_DIR$\Debug\Obj\ucos_stm8s.pbd</file>
+            <file>$PROJ_DIR$\..\src\init_peripher.h</file>
+            <file>$PROJ_DIR$\Debug\Obj\main.pbi</file>
+            <file>$PROJ_DIR$\..\src\MB1504.h</file>
+            <file>$TOOLKIT_DIR$\inc\c\stdlib.h</file>
+            <file>$PROJ_DIR$\Debug\Obj\OS_TASK.pbi</file>
+            <file>$PROJ_DIR$\Debug\Exe\yyy.out</file>
+            <file>$TOOLKIT_DIR$\lib\dbgstm8smd.a</file>
+            <file>$PROJ_DIR$\Debug\List\OS_FLAG.s</file>
+            <file>$PROJ_DIR$\Debug\Obj\OS_SEM.pbi</file>
+            <file>$PROJ_DIR$\Debug\Obj\OS_TASK.o</file>
+            <file>$PROJ_DIR$\Debug\Obj\main.o</file>
+            <file>$PROJ_DIR$\Debug\List\OS_MUTEX.s</file>
+            <file>$PROJ_DIR$\..\src\os_cfg.h</file>
+            <file>$PROJ_DIR$\Debug\Obj\rda1846s.pbi</file>
+            <file>$PROJ_DIR$\..\..\ucos_II\iarstm8\os_cpu_a.inc</file>
+            <file>$PROJ_DIR$\Debug\List\periph_ticks.lst</file>
+            <file>$PROJ_DIR$\Debug\List\OS_TASK.s</file>
+            <file>$TOOLKIT_DIR$\inc\iostm8s105k4.h</file>
+            <file>$PROJ_DIR$\Debug\List\OS_MBOX.s</file>
+            <file>$PROJ_DIR$\Debug\List\OS_CORE.s</file>
+            <file>$PROJ_DIR$\Debug\List\os_cpu_a.lst</file>
+            <file>$PROJ_DIR$\Debug\Obj\OS_TIME.o</file>
+            <file>$TOOLKIT_DIR$\inc\c\DLib_Defaults.h</file>
+            <file>$TOOLKIT_DIR$\inc\vregs.inc</file>
+            <file>$TOOLKIT_DIR$\inc\c\yvals.h</file>
+            <file>$PROJ_DIR$\Debug\List\OS_TIME.s</file>
+            <file>$PROJ_DIR$\Debug\Obj\OS_CORE.pbi</file>
+            <file>$PROJ_DIR$\Debug\List\rda1846s.s</file>
+            <file>$PROJ_DIR$\..\..\ucos_II\uCOS_II.H</file>
+            <file>$PROJ_DIR$\Debug\Obj\periph_ticks.o</file>
+            <file>$TOOLKIT_DIR$\lib\dlstm8smn.h</file>
+            <file>$PROJ_DIR$\Debug\Obj\os_cpu_c.pbi</file>
+            <file>$PROJ_DIR$\Debug\Obj\OS_TIME.pbi</file>
+            <file>$PROJ_DIR$\Debug\Obj\OS_MUTEX.pbi</file>
+            <file>$PROJ_DIR$\Debug\Obj\os_cpu_a.o</file>
+        </outputs>
+        <file>
+            <name>$PROJ_DIR$\..\..\ucos_II\OS_CORE.C</name>
+            <outputs>
+                <tool>
+                    <name>ICCSTM8</name>
+                    <file> 80 13</file>
+                </tool>
+                <tool>
+                    <name>BICOMP</name>
+                    <file> 87</file>
+                </tool>
+            </outputs>
+            <inputs>
+                <tool>
+                    <name>ICCSTM8</name>
+                    <file> 9 35 64 14 85 83 91 0 33 59 30 53 31 73 89 78 16 55 61 36 63 28</file>
+                </tool>
+                <tool>
+                    <name>BICOMP</name>
+                    <file> 61 83 35 30 73 85 53 78 63 33 59 14 9 64 31 89 55 36 28 91 0 16</file>
+                </tool>
+            </inputs>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\..\..\ucos_II\OS_MBOX.C</name>
+            <outputs>
+                <tool>
+                    <name>ICCSTM8</name>
+                    <file> 79 12</file>
+                </tool>
+                <tool>
+                    <name>BICOMP</name>
+                    <file> 48</file>
+                </tool>
+            </outputs>
+            <inputs>
+                <tool>
+                    <name>ICCSTM8</name>
+                    <file> 9 35 64 14 85 83 91 0 33 59 30 53 31 73 89 78 16 55 61 36 63 28</file>
+                </tool>
+                <tool>
+                    <name>BICOMP</name>
+                    <file> 55 85 31 28 14 33 0 64 89 36 30 91 78 35 53 73 61 63 83 59 16 9</file>
+                </tool>
+            </inputs>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\..\..\ucos_II\OS_MUTEX.C</name>
+            <outputs>
+                <tool>
+                    <name>ICCSTM8</name>
+                    <file> 72 54</file>
+                </tool>
+                <tool>
+                    <name>BICOMP</name>
+                    <file> 94</file>
+                </tool>
+            </outputs>
+            <inputs>
+                <tool>
+                    <name>ICCSTM8</name>
+                    <file> 9 35 64 14 85 83 91 0 33 59 30 53 31 73 89 78 16 55 61 36 63 28</file>
+                </tool>
+                <tool>
+                    <name>BICOMP</name>
+                    <file> 55 85 31 28 14 33 0 64 89 36 30 91 78 35 53 73 61 63 83 59 16 9</file>
+                </tool>
+            </inputs>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\..\..\ucos_II\OS_Q.C</name>
+            <outputs>
+                <tool>
+                    <name>ICCSTM8</name>
+                    <file> 58 1</file>
+                </tool>
+                <tool>
+                    <name>BICOMP</name>
+                    <file> 34</file>
+                </tool>
+            </outputs>
+            <inputs>
+                <tool>
+                    <name>ICCSTM8</name>
+                    <file> 9 35 64 14 85 83 91 0 33 59 30 53 31 73 89 78 16 55 61 36 63 28</file>
+                </tool>
+                <tool>
+                    <name>BICOMP</name>
+                    <file> 61 83 35 30 73 85 53 78 63 33 59 14 64 31 89 55 36 28 91 0 16 9</file>
+                </tool>
+            </inputs>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\..\src\init_peripher.c</name>
+            <outputs>
+                <tool>
+                    <name>ICCSTM8</name>
+                    <file> 45 2</file>
+                </tool>
+                <tool>
+                    <name>BICOMP</name>
+                    <file> 29</file>
+                </tool>
+            </outputs>
+            <inputs>
+                <tool>
+                    <name>ICCSTM8</name>
+                    <file> 61 78 16 35</file>
+                </tool>
+                <tool>
+                    <name>BICOMP</name>
+                    <file> 78 16 61 35</file>
+                </tool>
+            </inputs>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\..\..\ucos_II\OS_MEM.C</name>
+            <outputs>
+                <tool>
+                    <name>ICCSTM8</name>
+                    <file> 56 57</file>
+                </tool>
+                <tool>
+                    <name>BICOMP</name>
+                    <file> 47</file>
+                </tool>
+            </outputs>
+            <inputs>
+                <tool>
+                    <name>ICCSTM8</name>
+                    <file> 9 35 64 14 85 83 91 0 33 59 30 53 31 73 89 78 16 55 61 36 63 28</file>
+                </tool>
+                <tool>
+                    <name>BICOMP</name>
+                    <file> 33 78 14 53 63 59 85 35 73 61 83 30 64 31 89 55 36 28 91 0 9 16</file>
+                </tool>
+            </inputs>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\..\..\ucos_II\iarstm8\os_cpu_a.s</name>
+            <outputs>
+                <tool>
+                    <name>ASTM8</name>
+                    <file> 95 81</file>
+                </tool>
+            </outputs>
+            <inputs>
+                <tool>
+                    <name>ASTM8</name>
+                    <file> 75 84</file>
+                </tool>
+            </inputs>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\..\src\at1846s.c</name>
+            <outputs>
+                <tool>
+                    <name>ICCSTM8</name>
+                    <file> 43 32</file>
+                </tool>
+                <tool>
+                    <name>BICOMP</name>
+                    <file> 49</file>
+                </tool>
+            </outputs>
+            <inputs>
+                <tool>
+                    <name>ICCSTM8</name>
+                    <file> 28 9 35 64 14 85 83 91 0 33 59 30 53 31 73 89 78 16 55 61 36 63</file>
+                </tool>
+                <tool>
+                    <name>BICOMP</name>
+                    <file> 36 64 14 9 89 30 31 55 28 59 85 78 35 53 73 61 63 33 83 91 0 16</file>
+                </tool>
+            </inputs>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\..\src\interrupt.c</name>
+            <outputs>
+                <tool>
+                    <name>ICCSTM8</name>
+                    <file> 41 19</file>
+                </tool>
+                <tool>
+                    <name>BICOMP</name>
+                    <file> 37</file>
+                </tool>
+            </outputs>
+            <inputs>
+                <tool>
+                    <name>ICCSTM8</name>
+                    <file> 39 78 16</file>
+                </tool>
+                <tool>
+                    <name>BICOMP</name>
+                    <file> 78 16 39</file>
+                </tool>
+            </inputs>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\..\..\ucos_II\iarstm8\os_cpu_c.c</name>
+            <outputs>
+                <tool>
+                    <name>ICCSTM8</name>
+                    <file> 52 44</file>
+                </tool>
+                <tool>
+                    <name>BICOMP</name>
+                    <file> 92</file>
+                </tool>
+            </outputs>
+            <inputs>
+                <tool>
+                    <name>ICCSTM8</name>
+                    <file> 9 35 64 14 85 83 91 0 33 59 30 53 31 73 89 78 16 55 61 36 63 28</file>
+                </tool>
+                <tool>
+                    <name>BICOMP</name>
+                    <file> 14 31 28 33 0 55 85 78 64 89 36 30 91 9 35 53 73 61 63 83 59 16</file>
+                </tool>
+            </inputs>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\..\..\ucos_II\OS_TASK.C</name>
+            <outputs>
+                <tool>
+                    <name>ICCSTM8</name>
+                    <file> 77 70</file>
+                </tool>
+                <tool>
+                    <name>BICOMP</name>
+                    <file> 65</file>
+                </tool>
+            </outputs>
+            <inputs>
+                <tool>
+                    <name>ICCSTM8</name>
+                    <file> 9 35 64 14 85 83 91 0 33 59 30 53 31 73 89 78 16 55 61 36 63 28</file>
+                </tool>
+                <tool>
+                    <name>BICOMP</name>
+                    <file> 85 55 31 28 14 33 0 64 89 36 30 91 78 35 53 73 61 63 83 59 16 9</file>
+                </tool>
+            </inputs>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\..\src\main.c</name>
+            <outputs>
+                <tool>
+                    <name>ICCSTM8</name>
+                    <file> 50 71</file>
+                </tool>
+                <tool>
+                    <name>BICOMP</name>
+                    <file> 62</file>
+                </tool>
+            </outputs>
+            <inputs>
+                <tool>
+                    <name>ICCSTM8</name>
+                    <file> 9 35 64 14 85 83 91 0 33 59 30 53 31 73 89 78 16 55 61 36 63 28</file>
+                </tool>
+                <tool>
+                    <name>BICOMP</name>
+                    <file> 14 31 28 33 0 55 85 64 89 36 30 91 78 35 53 73 61 63 83 59 16 9</file>
+                </tool>
+            </inputs>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\..\src\periph_ticks.s</name>
+            <outputs>
+                <tool>
+                    <name>ASTM8</name>
+                    <file> 90 76</file>
+                </tool>
+            </outputs>
+            <inputs>
+                <tool>
+                    <name>ASTM8</name>
+                    <file> 75 84</file>
+                </tool>
+            </inputs>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\..\..\ucos_II\OS_SEM.C</name>
+            <outputs>
+                <tool>
+                    <name>ICCSTM8</name>
+                    <file> 17 11</file>
+                </tool>
+                <tool>
+                    <name>BICOMP</name>
+                    <file> 69</file>
+                </tool>
+            </outputs>
+            <inputs>
+                <tool>
+                    <name>ICCSTM8</name>
+                    <file> 9 35 64 14 85 83 91 0 33 59 30 53 31 73 89 78 16 55 61 36 63 28</file>
+                </tool>
+                <tool>
+                    <name>BICOMP</name>
+                    <file> 63 59 53 85 78 33 14 35 73 61 83 30 64 31 89 55 36 28 91 0 16 9</file>
+                </tool>
+            </inputs>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\..\..\ucos_II\OS_TIME.C</name>
+            <outputs>
+                <tool>
+                    <name>ICCSTM8</name>
+                    <file> 86 82</file>
+                </tool>
+                <tool>
+                    <name>BICOMP</name>
+                    <file> 93</file>
+                </tool>
+            </outputs>
+            <inputs>
+                <tool>
+                    <name>ICCSTM8</name>
+                    <file> 9 35 64 14 85 83 91 0 33 59 30 53 31 73 89 78 16 55 61 36 63 28</file>
+                </tool>
+                <tool>
+                    <name>BICOMP</name>
+                    <file> 33 28 0 31 14 55 85 64 89 36 30 91 35 78 53 73 61 63 83 59 9 16</file>
+                </tool>
+            </inputs>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\..\src\rda1846s.c</name>
+            <outputs>
+                <tool>
+                    <name>ICCSTM8</name>
+                    <file> 88 51</file>
+                </tool>
+                <tool>
+                    <name>BICOMP</name>
+                    <file> 74</file>
+                </tool>
+            </outputs>
+            <inputs>
+                <tool>
+                    <name>ICCSTM8</name>
+                    <file> 78 16 35 9 64 14 85 83 91 0 33 59 30 53 31 73 89 55 61 36 63 28</file>
+                </tool>
+                <tool>
+                    <name>BICOMP</name>
+                    <file> 61 14 16 35 33 78 9 73 59 85 53 63 83 30 64 31 89 55 36 28 91 0</file>
+                </tool>
+            </inputs>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\..\..\ucos_II\OS_FLAG.C</name>
+            <outputs>
+                <tool>
+                    <name>ICCSTM8</name>
+                    <file> 68 38</file>
+                </tool>
+                <tool>
+                    <name>BICOMP</name>
+                    <file> 46</file>
+                </tool>
+            </outputs>
+            <inputs>
+                <tool>
+                    <name>ICCSTM8</name>
+                    <file> 9 35 64 14 85 83 91 0 33 59 30 53 31 73 89 78 16 55 61 36 63 28</file>
+                </tool>
+                <tool>
+                    <name>BICOMP</name>
+                    <file> 63 59 53 85 78 33 14 35 73 61 83 30 64 31 89 55 36 28 91 0 9 16</file>
+                </tool>
+            </inputs>
+        </file>
+        <file>
+            <name>[ROOT_NODE]</name>
+            <outputs>
+                <tool>
+                    <name>ILINK</name>
+                    <file> 66</file>
+                </tool>
+            </outputs>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\Debug\Exe\yyy.out</name>
+            <inputs>
+                <tool>
+                    <name>ILINK</name>
+                    <file> 40 13 38 12 57 54 1 11 70 82 32 2 19 71 95 44 90 51 42 67</file>
+                </tool>
+            </inputs>
+        </file>
+    </configuration>
+    <configuration>
+        <name>Release</name>
+        <outputs />
+        <forcedrebuild>
+            <name>[MULTI_TOOL]</name>
+            <tool>ILINK</tool>
+        </forcedrebuild>
+        <forcedrebuild>
+            <name>[REBUILD_ALL]</name>
+        </forcedrebuild>
+    </configuration>
+</project>
