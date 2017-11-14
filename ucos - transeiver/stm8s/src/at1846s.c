@@ -195,7 +195,7 @@ BOOL IntAt1846s( void )
   /* reset chip */
   WriteCMD= RESET_AT_CMD;
   Writerda1846(0x30, &WriteCMD);
-  OSTimeDly(20);//200ms
+  OSTimeDly(50);//200ms
   
   /* read chip ID */
   AT1846s.Chip_ID = Readrda1846(0x00);
@@ -210,50 +210,180 @@ BOOL IntAt1846s( void )
   {
     return 0;
   }
-  
   /* set basic information int */
-  reg30.soft_reset = OFF;
-  reg30.chip_cal_en = DISABLE;
-  reg30.sq_on = OFF;
-  reg30.rx_on = OFF;
-  reg30.tx_on = OFF;
+  *(u16*)&reg30 = 0;
   reg30.pdn_reg = ON;
-  reg30.mute = OFF;
-  reg30.tail_elim_en = OFF;
-  reg30.band_mode_sel = BAND_MODE_25KHZ;
-  reg30.filter_band_sel = BAND_MODE_25KHZ;
-  reg30.xtal_mode = XTAL_26_OR_13MZh;
-  Writerda1846(0x30, (u16*)&reg30);
-  u16 Int = 0x0;
-  ReadReg(0x30, (u16*)&Int);//
-  /* set CLK = 26MHZ , 04H */
+  Writerda1846(0x30, (u16*)&reg30);// 0x0004
+
+  
+  /* set CLK = 26MHZ , 04H */  
+  *(u16*)&reg04 = 0x0FD0;//0x0FD0
   reg04.clk_mode = CLK_MODE_25_6_OR_26_MHZ;
   Writerda1846(0x04, (u16*)&reg04);
   
-  /* set ldo , 08H */
-  reg08.ldo_master_bypass = 0;//Setting RDA1846S in VHF band , 08H[14]must be 0.
-  Writerda1846(0x08, (u16*)&reg08);
+  /* set ?? 31H*/
+  WriteCMD= 0x0031;
+  Writerda1846(0x31, &WriteCMD);
   
-  /* set , 09H */
-  reg09.ldo_dig_vbit = 0x7;//3.3v
-  Writerda1846(0x09, (u16*)&reg09);
-  /* read 0aH */
-  //reg0a.pabias_voltage = 63;//<5:0>
-  //  reg0a.pga_gain = 31;//pga_gain<4:0>
-  //  reg0a.padrv_ibit = 15;//<3:0>
+  /* set ?? 33H*/
+  WriteCMD= 0x44A5;
+  Writerda1846(0x33, &WriteCMD);
+  
+  /* set ?? 34H*/
+  WriteCMD= 0x2B87;
+  Writerda1846(0x34, &WriteCMD);
+  
+  /* set ?? 41H*/
+  WriteCMD= 0x060F;
+  Writerda1846(0x41, &WriteCMD);
+  
+  /* set ?? 44H*/
+  WriteCMD= 0x0AFF;
+  Writerda1846(0x44, &WriteCMD);
+  
+  /* set ?? 47H*/
+  WriteCMD= 0x7F2F;
+  Writerda1846(0x47, &WriteCMD);
+  
+  /* set ?? 4FH*/
+  WriteCMD= 0x2C62;
+  Writerda1846(0x4F, &WriteCMD);
+  
+  /* set ?? 53H*/
+  WriteCMD= 0x0094;
+  Writerda1846(0x53, &WriteCMD);
+  
+  /* set ?? 54H*/
+  WriteCMD= 0x2A18;
+  Writerda1846(0x54, &WriteCMD);
+  
+  /* set ?? 55H*/
+  WriteCMD= 0x0081;
+  Writerda1846(0x55, &WriteCMD);
 
-  ReadReg(0x0a, (u16*)&reg0a);//default 0x7C20
+  /* set ?? 56H*/
+  WriteCMD= 0x0B02;
+  Writerda1846(0x56, &WriteCMD);
   
+  /* set ?? 57H*/
+  WriteCMD= 0x1C00;
+  Writerda1846(0x57, &WriteCMD);
   
-  /* read 15H */
-  ReadReg(0x15, (u16*)&reg15);//default 0x1100
+  /* set ?? 58H*/
+  WriteCMD= 0x800D;
+  Writerda1846(0x58, &WriteCMD);
   
-  /* read 24H  */
-  ReadReg(0x24, (u16*)&reg24);//default 0x0001
+  /* set ?? 5AH*/
+  WriteCMD= 0x0EDD;
+  Writerda1846(0x5A, &WriteCMD);
+
+  /* set ?? 63H*/
+  WriteCMD= 0x3FFF;
+  Writerda1846(0x63, &WriteCMD);
+
+  /* set basic information int */
+  *(u16*)&reg30 = 0;
+  reg30.xtal_mode = XTAL_26_OR_13MZh;
+  reg30.mute = ON;
+  reg30.rx_on = ON;
+  reg30.pdn_reg = ENABLE;
+  Writerda1846(0x30, (u16*)&reg30);// 0x40A4
   
-  reg24.pll_lock_det_sel = ENABLE;
-  Writerda1846(0x24, (u16*)&reg24); 
+  OSTimeDly(20);//200ms
+  
+  reg30.chip_cal_en = ENABLE;
+  Writerda1846(0x30, (u16*)&reg30);// 0x40A6
+  
+  OSTimeDly(20);//200ms
+  reg30.mute = OFF;
+  reg30.rx_on = OFF;
+  Writerda1846(0x30, (u16*)&reg30);// 0x4006
+  
+  /* set 校准?? 27H*/
+  WriteCMD= 0x74A4;
+  Writerda1846(0x27, &WriteCMD);
+  OSTimeDly(2);
+  WriteCMD= 0x7CA4;
+  Writerda1846(0x27, &WriteCMD);
+  
+  WriteCMD= 0x6CA4;
+  Writerda1846(0x27, &WriteCMD);
+  
+  /*set wide band */
+  *(u16*)&reg15 = 0x1F00;
+  Writerda1846(0x15, (u16*)&reg15);
+  
+  *(u16*)&reg32 = 0x7564;
+  Writerda1846(0x32, (u16*)&reg32);
+  
+  *(u16*)&reg3a = 0x44C3;
+  Writerda1846(0x3A, (u16*)&reg3a);
+
+  WriteCMD= 0x1930;
+  Writerda1846(0x3C, &WriteCMD);
+
+  WriteCMD= 0x29D2;
+  Writerda1846(0x3F, &WriteCMD);
+  
+  WriteCMD= 0x21C0;
+  Writerda1846(0x48, &WriteCMD);
+  
+  WriteCMD= 0x101E;
+  Writerda1846(0x60, &WriteCMD);
+
+  WriteCMD= 0x3767;
+  Writerda1846(0x62, &WriteCMD);
+  
+  WriteCMD= 0x248A;
+  Writerda1846(0x65, &WriteCMD);
+ 
+  WriteCMD= 0xFFAE;
+  Writerda1846(0x66, &WriteCMD);
+  
+  WriteCMD= 0x0001;
+  Writerda1846(0x7F, &WriteCMD);
+    
+  WriteCMD= 0x0024;
+  Writerda1846(0x06, &WriteCMD);
+
+  WriteCMD= 0x0214;
+  Writerda1846(0x07, &WriteCMD);
+  
+  WriteCMD= 0x0224;
+  Writerda1846(0x08, &WriteCMD);
+  
+  *(u16*)&reg09= 0x0314;
+  Writerda1846(0x09,(u16*)&reg09);
+
+  *(u16*)&reg0a= 0x037C;
+  Writerda1846(0x0A, (u16*)&reg0a);
+  
+  WriteCMD= 0x0344;
+  Writerda1846(0x0B, &WriteCMD);
+
+  WriteCMD= 0x0384;
+  Writerda1846(0x0C, &WriteCMD);
+
+  WriteCMD= 0x1384;
+  Writerda1846(0x0D, &WriteCMD);
+  
+  WriteCMD= 0x1B84;
+  Writerda1846(0x0E, &WriteCMD);
+  
+  WriteCMD= 0x3F84;
+   Writerda1846(0x0F, &WriteCMD);
+  
+  WriteCMD= 0xE0EB;
+  Writerda1846(0x12, &WriteCMD);
+  
+  WriteCMD= 0x0000;
+  Writerda1846(0x7F, &WriteCMD);
+  
+  WriteCMD= 0x8763;
+  Writerda1846(0x05, &WriteCMD);
    
+  
+  
   /* set RF fre 29H  */
   u32 rf_fre = 156800*16; //uint KHz*16
   
@@ -261,23 +391,14 @@ BOOL IntAt1846s( void )
   reg2a.freqL = (u16)rf_fre;
   Writerda1846(0x29, (u16*)&reg29); 
   Writerda1846(0x2a, (u16*)&reg2a);
+  
+  
+  /* set basic information int */
 
-  
-  /* set  3aH */
-  
-  reg3a.voice_sel = FROM_MIC;
-  reg3a.sq_dten = 0x00;//rssi detect enable
-  Writerda1846(0x3a, (u16*)&reg3a);
-  
-  //reg44.gain_tx = 
-  reg44.dac_vgain_ = 0x8;//Analog DAC gain
-  reg44.volume = 0x8;//Digital Voice gain
-  Writerda1846(0x44, (u16*)&reg44);
-  
-  
-  reg4e.ctcss_or_cdcss_sel = DISABLE;//not Tx ctcss/cdcss
-  Writerda1846(0x4e, (u16*)&reg4e);
+  reg30.chip_cal_en = ENABLE;
  
+  At1846sOPenRx();
+  
   
   return 1;
 }
@@ -287,48 +408,57 @@ u8 C_RFIC_R04H_FOSC = CLK_MODE_25_6_OR_26_MHZ;//
 u8 C_RFIC_R30H_NARROW = 0x70;
 void At1846sOPenTx()
 {
-//  reg30.rx_on = OFF;
-//  reg30.tx_on = ON;
-//  Writerda1846(0x30, (u16*)&reg30);
-//  OSTimeDly(1000);//10s
-//  u16 VoxMic = Readrda1846(0x1a);
-//  OSTimeDly(10);//100ms
-  Writerda1846s(0x30,0x00,0x04);//关闭收发	
-  OSTimeDly(10);//delay_100ms
-    /* set RF fre 29H  */
-  u32 rf_fre = 156800*16; //uint KHz*16
-  
-  reg29.freqH = (u16)(rf_fre >> 16);
-  reg2a.freqL = (u16)rf_fre;
-  Writerda1846(0x29, (u16*)&reg29); 
-  Writerda1846(0x2a, (u16*)&reg2a);
-  Writerda1846s(0x30,C_RFIC_R30H_NARROW,0x06);
-  OSTimeDly(10);//delay_100ms_end
-  Writerda1846s(0x30,C_RFIC_R30H_NARROW,0x26);
+
+  /* read 0aH */
+  *(u16*)&reg0a = 0x7B7F;
+   Writerda1846(0x0a, (u16*)&reg0a);
+//  reg0a.pabias_voltage = 63;//<5:0>
+//  reg0a.pga_gain = 31;//pga_gain<4:0>
+//  reg0a.padrv_ibit = 15;//<3:0>
+   reg30.tx_on = ON;
+   reg30.rx_on = OFF;
+   reg30.filter_band_sel = 0;
+   reg30.band_mode_sel = 0;
+   Writerda1846(0x30, (u16*)&reg30);// 0x4046
+   
+   TxPowerEN = 1;
+   SQL = 0;
 	
 }
 
 void At1846sOPenRx()
 {
-//  reg30.rx_on = ON;
-//  reg30.tx_on = OFF;
-//  Writerda1846(0x30, (u16*)&reg30);
-//  
-//  OSTimeDly(1000);//10s
-//  u16 RssiNoise = Readrda1846(0x1b);
-//  RssiNoise = Readrda1846(0x2d);
-//  OSTimeDly(10);//10s
-  Writerda1846s(0x30,0x00,0x04);//关闭收发	
-  OSTimeDly(10);//delay_100ms
-    /* set RF fre 29H  */
-  u32 rf_fre = 156800*16; //uint KHz*16
+
+  reg30.filter_band_sel = 1;
+  reg30.band_mode_sel = 1;
+  reg30.tx_on = OFF;
+  Writerda1846(0x30, (u16*)&reg30);
+  OSTimeDly(20);//200ms
+  reg30.rx_on = ON;
+  Writerda1846(0x30, (u16*)&reg30);
   
-  reg29.freqH = (u16)(rf_fre >> 16);
-  reg2a.freqL = (u16)rf_fre;
-  Writerda1846(0x29, (u16*)&reg29); 
-  Writerda1846s(0x30,C_RFIC_R30H_NARROW,0x06);
-  OSTimeDly(10);//delay_100ms_end
-  Writerda1846s(0x30,C_RFIC_R30H_NARROW,0x46);
+  //  reg44.dac_vgain_ = 0x8;//Analog DAC gain
+  //  reg44.volume = 0x8;//Digital Voice gain
+  *(uint16*)&reg44 = 0x0DFF;
+  Writerda1846(0x44, (u16*)&reg44);
+  
+  /* set ?? 58H*/
+  u16 WriteCMD= 0xFF40;
+  Writerda1846(0x58, &WriteCMD);
+  
+  RxPowerEN = 1;        
+  SQL = 1;
+ 
+  
+}
+#include "stdio.h"
+void ReadSignal()
+{
+ u16 data;
+ data = Readrda1846(0x1B);
+ printf("rssi_db= %d, noise_db= %d\n",(data&0xFF00)>>8,(data&0x00FF));
+ data = Readrda1846(0x1B);
+ printf("vox_db= %d, mic_db= %d\n",(data&0xFF00)>>8,(data&0x00FF));
 }
 
 /***************************test int *******************************************/

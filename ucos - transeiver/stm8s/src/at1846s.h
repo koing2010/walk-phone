@@ -45,20 +45,20 @@ typedef struct INFO_
 
 typedef struct REG_30H_
 {
-  u16 soft_reset      : 1; // 1 = reset, then all the registers are reset to default value,0 = normal
-  u16 chip_cal_en     : 1; // 1 = cal enable, 0 = cal disable 
-  u16 pdn_reg         : 1; // 1 = enable, 0 = disable,the same as pdn pin
-  u16 sq_on           : 1; // 1 = on, then chip auto sq, 0 = off
-  u16 vox_on          : 1; // 1 = on, enable 1846s Vox detect, 0 = off
-  u16 rx_on           : 1; // 1 = on, 0 = off
-  u16 tx_on           : 1; // 1 = on, 0 = off
-  u16 mute            : 1; // 1 = mute when rxno,0 = no mute
-  u16 others          : 2; // none
-  u16 direct_reg      : 1; // 1 = enable direct_reg,0 = disable direct_reg
-  u16 tail_elim_en    : 1; // 1= on ,enable 1846s tail elimination function,0 = off disable
-  u16 band_mode_sel   : 1; // Dsp band mode select: 1 = 25khz band mode , 0 = 12.5Khz band mode
-  u16 filter_band_sel : 1; // Analog filter band select: 1 = 25Khz band mode ,0 = 12.5Khz band mode
-  u16 xtal_mode       : 1; // 1: 26/13Mhz   0: 25.6/12.8Mhz
+  u16 soft_reset      : 1; //0   1 = reset, then all the registers are reset to default value,0 = normal
+  u16 chip_cal_en     : 1; //1   1 = cal enable, 0 = cal disable 
+  u16 pdn_reg         : 1; //2   1 = enable, 0 = disable,the same as pdn pin
+  u16 sq_on           : 1; //3   1 = on, then chip auto sq, 0 = off
+  u16 vox_on          : 1; //4   1 = on, enable 1846s Vox detect, 0 = off
+  u16 rx_on           : 1; //5   1 = on, 0 = off
+  u16 tx_on           : 1; //6   1 = on, 0 = off
+  u16 mute            : 1; //7   1 = mute when rxno,0 = no mute
+  u16 others          : 2; //8-9   none
+  u16 direct_reg      : 1; //10 1 = enable direct_reg,0 = disable direct_reg  
+  u16 tail_elim_en    : 1; //11  1= on ,enable 1846s tail elimination function,0 = off disable
+  u16 band_mode_sel   : 1; //12  Dsp band mode select: 1 = 25khz band mode , 0 = 12.5Khz band mode
+  u16 filter_band_sel : 1; //13  Analog filter band select: 1 = 25Khz band mode ,0 = 12.5Khz band mode  
+  u16 xtal_mode       : 1; //14  1: 26/13Mhz   0: 25.6/12.8Mhz
   u16 other           : 1;
 }REG_30H,*PREG_30H;
 
@@ -67,9 +67,9 @@ typedef struct REG_30H_
 /** 03h defalt value = 0x2B51 **/
 typedef struct REG_03H_
 {   
-  u16 other1             : 11; //
-  u16 tx_adc_reset_reg   : 1; // 1 = enable direct reg,0 = disable direct reg
-  u16 tx_adc_reset_dr    : 1; // 1 = enable reset adc,0 = disable direct reg
+  u16 other1             : 11; //[0:10]
+  u16 tx_adc_reset_reg   : 1; //11     1 = enable direct reg,0 = disable direct reg
+  u16 tx_adc_reset_dr    : 1; //12     1 = enable reset adc,0 = disable direct reg
   //bit13
   u8 other              : 2;   
 }REG_03H,*PREG_03H;
@@ -117,8 +117,7 @@ typedef struct REG_0AH_
 /** 15h default value = 0x1100 **/
 typedef struct REG_15H_
 {
-  u16 other2              : 8;// 
-  u16 others              : 1;// 
+  u16 others              : 9;// 
   u16 tuning_bit           : 4;// Tuning IF filter center frequency and bw
   u16 others1              : 3;//
 }REG_15H,*PREG_15H;
@@ -126,12 +125,12 @@ typedef struct REG_15H_
 /** 24h default value = 0x0001 **/
 typedef struct REG_24H_
 {
-  u16 others                 : 6;// 
-  u16 dsp_resetn_reg         : 1;//1=enable reset dsp,0=disable reset dsp
-  u16 dsp_resetn_dr          : 1;//1=enable direct reg,0=disable direct reg
-  u16 others1                : 5;//
-  u16 reset_pll_lock_delay   : 2;//
-  u16 pll_lock_det_sel       : 1;//1: bypass pll lock det function
+  u16 others                 : 6;//[0:5] 
+  u16 dsp_resetn_reg         : 1;//[6]     1=enable reset dsp,0=disable reset dsp
+  u16 dsp_resetn_dr          : 1;//[7]     1=enable direct reg,0=disable direct reg
+  u16 others1                : 5;//[8:12]
+  u16 reset_pll_lock_delay   : 2;//[13:14]
+  u16 pll_lock_det_sel       : 1;//[15]   : bypass pll lock det function
   
 }REG_24H,*PREG_24H;
 
@@ -139,6 +138,7 @@ typedef struct REG_24H_
 typedef struct REG_29H_
 {
   u16 freqH                   : 14;//Freq high value (unit 1khz/16)
+  u16 ohters                  : 2;
 }REG_29H,*PREG_29H;
 
 /** 2ah default value = 0x3A84 **/
@@ -164,11 +164,11 @@ typedef struct REG_32H_
 /** 3ah default value = 0x40C3 **/
 typedef struct REG_3AH_
 {
-  u16 ctcss_cdcss_dten       : 5;//Select Ctcss/Cdcss detect mode for rx
-  u16 agc_target_pwr         : 1;//Select Ctcss/Cdcss mode for rx
-  u16 sq_dten                : 5;//sq condition enable
-  u16 sq_out_sel             : 1;//1=output of gpio6=sq_cmp & sub_audio_cmp; 0=output of gpio6= sq_cmp .
-  u16 voice_sel              : 3;// voice path select
+  u16 ctcss_cdcss_dten       : 5;//[0:4]  Select Ctcss/Cdcss detect mode for rx
+  u16 cdcss_out_sel          : 1;//[5]    Select Ctcss/Cdcss mode for rx
+  u16 sq_dten                : 5;//[6:10]  sq condition enable
+  u16 sq_out_sel             : 1;//[11]   1=output of gpio6=sq_cmp & sub_audio_cmp; 0=output of gpio6= sq_cmp .
+  u16 voice_sel              : 3;//[12:13] voice path select
   u16 code_out_sel           : 1;//1=output code sample signal via GPIO3, 0=output dtmf_sample/dtmf_idle signal via GPIO3
 }REG_3AH,*PREG_3AH;
 
@@ -221,7 +221,7 @@ asm("NOP"); asm("NOP");}
 
 
 //#define RDA1846PDN   _pa2 
-
+void ReadSignal();
 void At1846sOPenTx();
 void At1846sOPenRx();
 BOOL IntAt1846s( void );
